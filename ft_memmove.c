@@ -6,7 +6,7 @@
 /*   By: maweiss <maweiss@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 11:53:04 by maweiss           #+#    #+#             */
-/*   Updated: 2023/11/13 18:35:04 by maweiss          ###   ########.fr       */
+/*   Updated: 2023/11/14 14:19:36 by maweiss          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,17 +41,13 @@ void	*memmove(void *dest, const void *src, size_t n)
 	return (dest);
 }
 
+/*
 int	main(void)
 {
 	static char arr[] = "11111111102222222222";
 
 	printf("%s\n", arr);
-	printf("%s\n", (char *)memmove(&arr[9], &arr[0], 12));
+	printf("%s\n", (char *)memmove(&arr[0], &arr[10], 21));
 	printf("%s\n", arr);
 }
-
-
-
-a0000000b
-000000000
-b0000000a
+*/
