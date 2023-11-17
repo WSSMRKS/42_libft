@@ -1,40 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maweiss <maweiss@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/16 17:48:45 by maweiss           #+#    #+#             */
-/*   Updated: 2023/11/17 13:39:51 by maweiss          ###   ########.fr       */
+/*   Created: 2023/11/16 17:43:49 by maweiss           #+#    #+#             */
+/*   Updated: 2023/11/17 16:42:28 by maweiss          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 #include <stdio.h>
 
-void	*ft_memchr(const void *s, int c, size_t n)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	size_t	i;
-
-	i = 0;
-	while (i < n)
+	while (*(char *)s1 == *(char *)s2 && *(char *)s1 != '\0' && n > 0)
 	{
-		if (((char *)s)[i] == c)
-			return ((void *)&s[i]);
-		i++;
+		s1++;
+		s2++;
+		n--;
 	}
-	return (NULL);
+	if (n == 0)
+		return (0);
+	return (*(char *)s1 - *(char *)s2);
 }
 
-/*
 int	main(void)
 {
-	printf("0123456789aldfkgj;sldfkjgzlsdkj");
-	printf("\n");
-	printf("%s\n", (char *)ft_memchr("0123456789aldfkgj;sldfkjgzlsdkj", 'z', 26));
-	printf("0123456789aldfkgj;sldfkjgzlsdkj");
-	printf("\n");
-	printf("%s\n", (char *)memchr("0123456789aldfkgj;sldfkjgzlsdkj", 'z', 26));
+	static int	bla[] = {112, 12, 122, 11, 12};
+	static int	bla2[] = {112, 12, 122, 11, 11};
+	printf("%d\n", ft_memcmp(bla, bla2, 10));
+	printf("----------------------------\n");
+	printf("%d\n", memcmp(bla, bla2, 10));
 }
-*/
