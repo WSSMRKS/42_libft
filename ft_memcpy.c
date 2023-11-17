@@ -6,7 +6,7 @@
 /*   By: maweiss <maweiss@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 18:31:34 by maweiss           #+#    #+#             */
-/*   Updated: 2023/11/07 20:13:22 by maweiss          ###   ########.fr       */
+/*   Updated: 2023/11/17 21:16:26 by maweiss          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,17 +31,28 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 
 /*
 #include <string.h>
+#include <unistd.h>
 
 int	main(void)
 {
 	static int	arr1[40] = {12, 39, 23, 23, 454, 6, 4, 4, 3, 2};
-	static char	arr2[] = "sjdaflajsdfljas;lfkja;lkjfsflsahdkfjah";
+	static char	arr2[] = "sjdaflajsdfljas;lfkja;lkjfsflsahdkfjaha";
+	static int	arr3[40] = {12, 39, 23, 23, 454, 6, 4, 4, 3, 2};
 
-	printf("%s\n", (char *) arr1);
-	printf("%s\n", (char *) arr2);
-	ft_memcpy(arr2, arr1, 40);
-	printf("%s\n", (char *) arr1);
-	printf("%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n", (char *) arr2);
-	
+	write(1, arr2, 40);
+	write(1, "\n", 1);
+	write(1, arr1, 40);
+	write(1, "\n", 1);
+	ft_memcpy(arr1, arr2, 40);
+	write(1, arr2, 40);
+	write(1, "\n", 1);
+	write(1, arr1, 40);
+	write(1, "\n", 1);
+	write(1, "--------------------------------\n", 33);
+	memcpy(arr3, arr1, 40);
+	write(1, arr3, 40);
+	write(1, "\n", 1);
+	write(1, arr1, 40);
+	write(1, "\n", 1);
 }
 */
