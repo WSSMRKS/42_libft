@@ -6,86 +6,50 @@
 /*   By: maweiss <maweiss@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 20:21:31 by maweiss           #+#    #+#             */
-/*   Updated: 2023/11/17 21:17:12 by maweiss          ###   ########.fr       */
+/*   Updated: 2023/11/18 13:37:55 by maweiss          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strstr(char *str, char *to_find);
-char	*ft_while(char *tmpstr, char *tmpfnd);
-int		ft_comp(char *tmpstr, char *tmpfnd);
-int		ft_strlen(char *str);
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <bsd/string.h>
 
-int	ft_strlen(char *str)
+char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	int	strlen;
+	int			i;
+	int			k;
+	int			l_tmp;
 
-	strlen = 0;
-	while (*str != '\0')
+	if (*little == '\0')
+		return ((char *)big);
+	while (len > 0)
 	{
-		strlen++;
-		str++;
+		if (*big == *little)
+		{
+			i = 0;
+			k = 0;
+			l_tmp = len;
+			while (l_tmp > 0 && big[i] == little[k] && big[i++] && little[k++])
+				l_tmp--;
+			if (little[k] == '\0')
+				return ((char *)big);
+		}
+		big++;
+		len--;
 	}
-	return (strlen);
+	return (NULL);
 }
 
-int	ft_comp(char *tmpstr, char *tmpfnd)
+/*
+int	main(int argc, char **argv)
 {
-	char	*tmpcmp1;
-	char	*tmpcmp2;
-	int		suc;
-	int		len;
-	int		l;
-
-	tmpcmp1 = tmpstr;
-	tmpcmp2 = tmpfnd;
-	len = ft_strlen(tmpfnd);
-	l = 0;
-	while (*tmpcmp1 == *tmpcmp2 && *tmpcmp1 != '\0')
-	{
-		tmpcmp1++;
-		tmpcmp2++;
-		l++;
-	}
-	if (l == (len))
-		suc = 1;
-	else
-		suc = 0;
-	return (suc);
+	if (argc < 2)
+		return (1);
+	printf("--------------\n");
+	printf("%s\n", ft_strnstr(argv[1], argv[2], atoi(argv[3])));
+	printf("--------------\n");
+	printf("%s\n", strnstr(argv[1], argv[2], atoi(argv[3])));
+	printf("--------------\n");
 }
-
-char	*ft_while(char *tmpstr, char *to_find)
-{
-	char	*ret;
-	int		success;
-	char	*tmpfnd;
-
-	success = 0;
-	ret = (void *) 0;
-	while (*tmpstr != '\0' && success != 1)
-	{
-		tmpfnd = to_find;
-		success = ft_comp(tmpstr, tmpfnd);
-		if (success == 0)
-			tmpstr++;
-	}
-	if (success == 1)
-		ret = tmpstr;
-	return (ret);
-}
-
-char	*ft_strstr(char *str, char *to_find)
-{
-	char	*tmpstr;
-	char	*needle;
-
-	tmpstr = str;
-	needle = to_find;
-	if (*to_find == '\0')
-		return (str);
-	else
-		needle = ft_while(tmpstr, to_find);
-	return (needle);
-}
-
- char *
-     strnstr(const char *big, const char *little, size_t len);
+*/
