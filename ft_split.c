@@ -6,7 +6,7 @@
 /*   By: maweiss <maweiss@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 14:21:56 by maweiss           #+#    #+#             */
-/*   Updated: 2023/11/21 16:48:20 by maweiss          ###   ########.fr       */
+/*   Updated: 2023/11/22 13:50:01 by maweiss          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	ft_free(char **tofree)
 {
 	int	i;
 
+	if (!tofree)
+		return ;
 	i = 0;
 	while (tofree[i])
 	{
@@ -63,11 +65,9 @@ char	*ft_strdup_split(char *arr, char *s, char c, int *k)
 	int		len;
 
 	len = ft_strlen_split(&s[*k], c);
-	arr = malloc(sizeof(char) * len + 1);
+	arr = malloc(sizeof(char) * (len + 1));
 	if (!arr)
-	{
 		return (NULL);
-	}
 	i = 0;
 	while (s[*k] != c && s[*k] != '\0')
 	{
@@ -88,7 +88,7 @@ char	**ft_split(char const *s, char c)
 	k = 0;
 	i = 0;
 	count = ft_strcount((char *)s, c);
-	arr = malloc(sizeof(char *) * count + 1);
+	arr = malloc(sizeof(char *) * (count + 1));
 	if (!arr)
 	{
 		free((void *) arr);
@@ -102,10 +102,7 @@ char	**ft_split(char const *s, char c)
 		{
 			arr[i] = ft_strdup_split(arr[i], (char *)s, c, &k);
 			if (!arr)
-			{
 				break ;
-				return (NULL);
-			}
 			i++;
 			count--;
 		}
