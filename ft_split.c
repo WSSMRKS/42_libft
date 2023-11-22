@@ -6,12 +6,26 @@
 /*   By: maweiss <maweiss@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 14:21:56 by maweiss           #+#    #+#             */
-/*   Updated: 2023/11/20 18:41:20 by maweiss          ###   ########.fr       */
+/*   Updated: 2023/11/21 16:48:20 by maweiss          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include <stdio.h>
+
+void	ft_free(char **tofree)
+{
+	int	i;
+
+	i = 0;
+	while (tofree[i])
+	{
+		free((void *)tofree[i]);
+		i++;
+	}
+	free((void *)tofree);
+	return ;
+}
 
 size_t	ft_strcount(char *str, char c)
 {
@@ -51,7 +65,9 @@ char	*ft_strdup_split(char *arr, char *s, char c, int *k)
 	len = ft_strlen_split(&s[*k], c);
 	arr = malloc(sizeof(char) * len + 1);
 	if (!arr)
+	{
 		return (NULL);
+	}
 	i = 0;
 	while (s[*k] != c && s[*k] != '\0')
 	{
@@ -73,6 +89,11 @@ char	**ft_split(char const *s, char c)
 	i = 0;
 	count = ft_strcount((char *)s, c);
 	arr = malloc(sizeof(char *) * count + 1);
+	if (!arr)
+	{
+		free((void *) arr);
+		return (NULL);
+	}
 	while (count > 0)
 	{
 		if (s[k] == c)
@@ -80,10 +101,17 @@ char	**ft_split(char const *s, char c)
 		else
 		{
 			arr[i] = ft_strdup_split(arr[i], (char *)s, c, &k);
+			if (!arr)
+			{
+				break ;
+				return (NULL);
+			}
 			i++;
 			count--;
 		}
 	}
+	if (count > 0)
+		ft_free(arr);
 	if (count == 0)
 		arr[i] = NULL;
 	return (arr);
@@ -103,5 +131,6 @@ int	main(void)
 		printf("%s\n", split[i]);
 		i++;
 	}
+	ft_free(split);
 	return (0);
 }
