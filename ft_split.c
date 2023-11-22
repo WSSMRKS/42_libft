@@ -6,7 +6,7 @@
 /*   By: maweiss <maweiss@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 14:21:56 by maweiss           #+#    #+#             */
-/*   Updated: 2023/11/22 13:50:01 by maweiss          ###   ########.fr       */
+/*   Updated: 2023/11/22 20:26:24 by maweiss          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,27 +29,25 @@ void	ft_free(char **tofree)
 	return ;
 }
 
-size_t	ft_strcount(char *str, char c)
-{
-	size_t	i;
-
-	i = 0;
-	str++;
-	while (*str)
-	{
-		if (*str == c && *(str - 1) != c)
-			i++;
-		str++;
-	}
-	if (*str == '\0' && *(str - 1) != c)
-		i++;
-	return (i);
-}
-
-size_t	ft_strlen_split(char *str, char del)
+size_t	ft_str_len_count(char *str, char del, int mode)
 {
 	size_t	a;
+	size_t	i;
 
+	if (mode == 1)
+	{
+		i = 0;
+		str++;
+		while (*str)
+		{
+			if (*str == del && *(str - 1) != del)
+				i++;
+			str++;
+		}
+		if (*str == '\0' && *(str - 1) != del)
+			i++;
+		return (i);
+	}
 	a = 0;
 	while (*str != del && *str != '\0')
 	{
@@ -64,7 +62,7 @@ char	*ft_strdup_split(char *arr, char *s, char c, int *k)
 	int		i;
 	int		len;
 
-	len = ft_strlen_split(&s[*k], c);
+	len = ft_str_len_count(&s[*k], c, 2);
 	arr = malloc(sizeof(char) * (len + 1));
 	if (!arr)
 		return (NULL);
@@ -78,22 +76,13 @@ char	*ft_strdup_split(char *arr, char *s, char c, int *k)
 	return (arr);
 }
 
-char	**ft_split(char const *s, char c)
+int	ft_core(char **arr, int count, char *s, char c)
 {
-	size_t	count;
-	char	**arr;
 	int		i;
 	int		k;
 
 	k = 0;
 	i = 0;
-	count = ft_strcount((char *)s, c);
-	arr = malloc(sizeof(char *) * (count + 1));
-	if (!arr)
-	{
-		free((void *) arr);
-		return (NULL);
-	}
 	while (count > 0)
 	{
 		if (s[k] == c)
@@ -107,16 +96,39 @@ char	**ft_split(char const *s, char c)
 			count--;
 		}
 	}
-	if (count > 0)
-		ft_free(arr);
 	if (count == 0)
 		arr[i] = NULL;
+	return (count);
+}
+
+char	**ft_split(char const *s, char c)
+{
+	size_t	count;
+	char	**arr;
+	int		i;
+	int		k;
+
+	k = 0;
+	i = 0;
+	count = ft_str_len_count((char *)s, c, 1);
+	arr = malloc(sizeof(char *) * (count + 1));
+	if (!arr)
+	{
+		free((void *) arr);
+		return (NULL);
+	}
+	if (ft_core(arr, count, (char *)s, c) > 0)
+	{
+		ft_free(arr);
+		return (NULL);
+	}
 	return (arr);
 }
 
+/*
 int	main(void)
 {
-	static char	*test = "This.is.the first test.of...........my.new..........split function";
+	static char	*test = "...This.is.the first test.of.my.new.split function...";
 	static char	c = '.';
 	char		**split;
 	size_t		i;
@@ -131,3 +143,4 @@ int	main(void)
 	ft_free(split);
 	return (0);
 }
+*/

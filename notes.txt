@@ -1,3 +1,0 @@
-free as optional in the arguments of test _ main.
-valgrind main.c
-free.

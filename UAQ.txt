@@ -1,6 +1,0 @@
-ft_strlen:
-	size_t or not size_t? unsigned long? unsigned int? 
-		Using size_t is more flexible because different implementations can have different lengths of size_t.
-		Still don't know what Moulinette is gonna say.
-ft_memset:
-	Any pointer is possible to give
