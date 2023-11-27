@@ -6,14 +6,14 @@
 /*   By: maweiss <maweiss@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/18 12:25:26 by maweiss           #+#    #+#             */
-/*   Updated: 2023/11/18 13:33:23 by maweiss          ###   ########.fr       */
+/*   Updated: 2023/11/27 10:55:58 by maweiss          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include <stdio.h>
 
-int	ft_core(const char *str)
+static int	ft_core(const char *str)
 {
 	int	i;
 	int	digits;

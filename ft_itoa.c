@@ -1,21 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa_first.c                                    :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maweiss <maweiss@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 11:17:42 by maweiss           #+#    #+#             */
-/*   Updated: 2023/11/22 20:25:28 by maweiss          ###   ########.fr       */
+/*   Updated: 2023/11/27 10:57:17 by maweiss          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include <stdio.h>
 
-// malloc right amount of memory, change from stdout to buff!!!
-
-char	*ft_special(int *nb, int *digits)
+static char	*ft_special(int *nb, int *digits)
 {
 	int		tmp;
 	char	*buff;

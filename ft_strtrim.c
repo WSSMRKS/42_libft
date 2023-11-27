@@ -6,13 +6,13 @@
 /*   By: maweiss <maweiss@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 13:19:11 by maweiss           #+#    #+#             */
-/*   Updated: 2023/11/20 14:19:15 by maweiss          ###   ########.fr       */
+/*   Updated: 2023/11/27 11:03:21 by maweiss          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-int	ft_checkset(char const *s1, char const *set)
+static int	ft_checkset(char const *s1, char const *set)
 {
 	while (*set)
 	{

@@ -6,13 +6,13 @@
 /*   By: maweiss <maweiss@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 17:16:43 by maweiss           #+#    #+#             */
-/*   Updated: 2023/11/20 11:48:07 by maweiss          ###   ########.fr       */
+/*   Updated: 2023/11/27 10:59:44 by maweiss          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-int	ft_strlen(char *str)
+static int	ft_strlen(char *str)
 {
 	int	strlen;
 

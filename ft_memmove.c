@@ -6,19 +6,20 @@
 /*   By: maweiss <maweiss@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 11:53:04 by maweiss           #+#    #+#             */
-/*   Updated: 2023/11/14 14:19:36 by maweiss          ###   ########.fr       */
+/*   Updated: 2023/11/27 17:09:46 by maweiss          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
+#include <string.h>
 
-void	*memmove(void *dest, const void *src, size_t n)
+void	*ft_memmove(void *dest, const void *src, size_t n)
 {
 	int	i;
 
 	if (n == 0)
 		return (NULL);
-	if (&src[n - 1] > dest)
+	if (src - 1 > dest)
 	{
 		while (n > 0)
 		{
@@ -44,10 +45,16 @@ void	*memmove(void *dest, const void *src, size_t n)
 /*
 int	main(void)
 {
-	static char arr[] = "11111111102222222222";
+	static char	arr[] = "11111111102222222222";
 
 	printf("%s\n", arr);
-	printf("%s\n", (char *)memmove(&arr[0], &arr[10], 21));
+	printf("%s\n", (char *)memmove(&arr[0], &arr[10], 20));
 	printf("%s\n", arr);
+
+	static char arr2[] = "11111111102222222222";
+
+	printf("%s\n", arr2);
+	printf("%s\n", (char *)ft_memmove(&arr2[0], &arr2[10], 20));
+	printf("%s\n", arr2);
 }
 */

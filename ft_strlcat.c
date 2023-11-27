@@ -6,14 +6,14 @@
 /*   By: maweiss <maweiss@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 14:20:41 by maweiss           #+#    #+#             */
-/*   Updated: 2023/11/16 15:50:25 by maweiss          ###   ########.fr       */
+/*   Updated: 2023/11/27 11:00:11 by maweiss          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 #include <stdio.h>
 
-size_t	ft_strlen(const char *str)
+static size_t	ft_strlen(const char *str)
 {
 	size_t	a;
 

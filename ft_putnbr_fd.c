@@ -6,13 +6,13 @@
 /*   By: maweiss <maweiss@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 20:33:03 by maweiss           #+#    #+#             */
-/*   Updated: 2023/11/23 19:02:09 by maweiss          ###   ########.fr       */
+/*   Updated: 2023/11/27 10:58:06 by maweiss          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_special(int *nb, char *buff, int fd)
+static void	ft_special(int *nb, char *buff, int fd)
 {
 	if (*nb == -2147483648)
 	{

@@ -6,14 +6,14 @@
 /*   By: maweiss <maweiss@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 14:21:56 by maweiss           #+#    #+#             */
-/*   Updated: 2023/11/22 20:26:24 by maweiss          ###   ########.fr       */
+/*   Updated: 2023/11/27 14:12:37 by maweiss          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include <stdio.h>
 
-void	ft_free(char **tofree)
+static void	ft_free(char **tofree)
 {
 	int	i;
 
@@ -29,7 +29,7 @@ void	ft_free(char **tofree)
 	return ;
 }
 
-size_t	ft_str_len_count(char *str, char del, int mode)
+static size_t	ft_str_len_count(char *str, char del, int mode)
 {
 	size_t	a;
 	size_t	i;
@@ -57,7 +57,7 @@ size_t	ft_str_len_count(char *str, char del, int mode)
 	return (a);
 }
 
-char	*ft_strdup_split(char *arr, char *s, char c, int *k)
+static char	*ft_strdup_split(char *arr, char *s, char c, int *k)
 {
 	int		i;
 	int		len;
@@ -76,7 +76,7 @@ char	*ft_strdup_split(char *arr, char *s, char c, int *k)
 	return (arr);
 }
 
-int	ft_core(char **arr, int count, char *s, char c)
+static int	ft_core(char **arr, int count, char *s, char c)
 {
 	int		i;
 	int		k;
@@ -105,11 +105,7 @@ char	**ft_split(char const *s, char c)
 {
 	size_t	count;
 	char	**arr;
-	int		i;
-	int		k;
 
-	k = 0;
-	i = 0;
 	count = ft_str_len_count((char *)s, c, 1);
 	arr = malloc(sizeof(char *) * (count + 1));
 	if (!arr)

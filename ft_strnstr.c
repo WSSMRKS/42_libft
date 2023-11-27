@@ -6,14 +6,13 @@
 /*   By: maweiss <maweiss@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 20:21:31 by maweiss           #+#    #+#             */
-/*   Updated: 2023/11/18 13:37:55 by maweiss          ###   ########.fr       */
+/*   Updated: 2023/11/27 11:02:40 by maweiss          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <bsd/string.h>
 
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
@@ -42,6 +41,8 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 }
 
 /*
+#include <bsd/string.h>
+
 int	main(int argc, char **argv)
 {
 	if (argc < 2)

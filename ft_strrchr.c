@@ -6,13 +6,13 @@
 /*   By: maweiss <maweiss@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 16:08:17 by maweiss           #+#    #+#             */
-/*   Updated: 2023/11/16 16:33:08 by maweiss          ###   ########.fr       */
+/*   Updated: 2023/11/27 17:52:30 by maweiss          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-size_t	ft_strlen(char *str)
+static size_t	ft_strlen(char *str)
 {
 	size_t	a;
 
@@ -25,11 +25,11 @@ size_t	ft_strlen(char *str)
 	return (a);
 }
 
-char	*strrchr(const char *s, int c)
+char	*ft_strrchr(const char *s, int c)
 {
 	int	i;
 
-	i = ft_strlen((char *)s) - 1;
+	i = ft_strlen((char *)s);
 	while (i >= 0)
 	{
 		if (s[i] == (char)c)
@@ -39,9 +39,11 @@ char	*strrchr(const char *s, int c)
 	return (NULL);
 }
 
+/*
 int	main(void)
 {
 	printf("alkdfjaslddkjflekjfd013246546987a65135464621");
 	printf("\n");
 	printf("%s\n", strrchr("alkdfjaslddkjflekjfd013246546987a65135464621", 'a'));
 }
+*/

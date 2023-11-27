@@ -6,7 +6,7 @@
 /*   By: maweiss <maweiss@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 20:30:22 by maweiss           #+#    #+#             */
-/*   Updated: 2023/11/23 18:37:53 by maweiss          ###   ########.fr       */
+/*   Updated: 2023/11/27 11:01:20 by maweiss          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <stdio.h>
 #include <ctype.h>
 
-size_t	ft_strlen(char *str)
+static size_t	ft_strlen(char *str)
 {
 	size_t	a;
 

@@ -6,14 +6,14 @@
 /*   By: maweiss <maweiss@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 14:20:41 by maweiss           #+#    #+#             */
-/*   Updated: 2023/11/14 15:33:23 by maweiss          ###   ########.fr       */
+/*   Updated: 2023/11/27 11:00:45 by maweiss          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 #include <stdio.h>
 
-size_t	ft_strlen(const char *str)
+static size_t	ft_strlen(const char *str)
 {
 	size_t	a;
 
@@ -52,6 +52,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 	return (lensrc);
 }
 
+/*
 int	main(void)
 {
 	static char	*src = "1234567890123456789012345678901234567890";
@@ -65,15 +66,4 @@ int	main(void)
 	printf("%zu\n", ft_strlcpy(dst, src, 10));
 	printf("%s\n", dst);
 }
-
-/*
-	info:
-	Null byte should be included in size;
-	Conditions:
-	src = 0
-	size = 0
-	size < str --> null terminate result
-	size > str --> copy string add terminating \null
-	size = 0 > return dst
-	size = 1 > 
 */

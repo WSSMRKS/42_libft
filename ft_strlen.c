@@ -6,13 +6,13 @@
 /*   By: maweiss <maweiss@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 17:52:32 by maweiss           #+#    #+#             */
-/*   Updated: 2023/11/06 18:23:29 by maweiss          ###   ########.fr       */
+/*   Updated: 2023/11/27 15:00:39 by maweiss          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-size_t	ft_strlen(char *str)
+size_t	ft_strlen(const char *str)
 {
 	size_t	a;
 
