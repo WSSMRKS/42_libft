@@ -6,7 +6,7 @@
 /*   By: maweiss <maweiss@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 11:17:42 by maweiss           #+#    #+#             */
-/*   Updated: 2023/11/27 10:57:17 by maweiss          ###   ########.fr       */
+/*   Updated: 2023/11/29 12:27:01 by maweiss          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,22 +21,21 @@ static char	*ft_special(int *nb, int *digits)
 	tmp = *nb;
 	if (*nb < 0)
 	{
-		buff = malloc(*digits + 2);
-		buff[0] = '-';
 		while (tmp <= -10)
 		{
 			tmp /= 10;
 			(*digits)++;
 		}
+		buff = malloc(*digits + 2);
 	}
 	if (*nb >= 0)
 	{
-		buff = malloc(*digits + 1);
 		while (tmp >= 10)
 		{
 			tmp /= 10;
 			(*digits)++;
 		}
+		buff = malloc(*digits + 1);
 	}
 	return (buff);
 }
@@ -48,19 +47,23 @@ char	*ft_itoa(int nb)
 	int		i;
 
 	digits = 1;
-	buff = NULL;
 	buff = ft_special(&nb, &digits);
+	if (!buff)
+		return (NULL);
 	i = digits;
-	buff[i] = 0;
-	i--;
+	if (nb < 0)
+	{
+		buff[0] = '-';
+		i += 1;
+	}
+	buff[i--] = 0;
 	while (digits > 0)
 	{
 		if (nb >= 0)
-			buff[i] = '0' + nb % 10;
+			buff[i--] = '0' + nb % 10;
 		if (nb < 0)
-			buff[i + 1] = '0' + -1 * (nb % 10);
+			buff[i--] = '0' + -1 * (nb % 10);
 		nb /= 10;
-		i--;
 		digits--;
 	}
 	return (buff);

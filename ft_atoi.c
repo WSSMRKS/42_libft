@@ -6,7 +6,7 @@
 /*   By: maweiss <maweiss@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/18 12:25:26 by maweiss           #+#    #+#             */
-/*   Updated: 2023/11/27 10:55:58 by maweiss          ###   ########.fr       */
+/*   Updated: 2023/11/28 13:06:41 by maweiss          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,8 @@ int	ft_atoi(const char *nptr)
 	int		sign;
 
 	sign = 1;
-	while (*nptr == ' ')
+	while (*nptr == ' ' || *nptr == '\t' || *nptr == '\v' || *nptr == '\r'
+		|| *nptr == '\n' || *nptr == '\f')
 		nptr++;
 	if (*nptr == '-')
 	{
