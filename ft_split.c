@@ -6,7 +6,7 @@
 /*   By: maweiss <maweiss@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 14:21:56 by maweiss           #+#    #+#             */
-/*   Updated: 2023/11/27 14:12:37 by maweiss          ###   ########.fr       */
+/*   Updated: 2023/11/30 12:59:00 by maweiss          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,8 +63,13 @@ static char	*ft_strdup_split(char *arr, char *s, char c, int *k)
 	int		len;
 
 	len = ft_str_len_count(&s[*k], c, 2);
-	arr = malloc(sizeof(char) * (len + 1));
-	if (!arr)
+	if (len > 0)
+	{
+		arr = malloc(sizeof(char) * (len + 1));
+		if (!arr)
+			return (NULL);
+	}
+	if (len == 0)
 		return (NULL);
 	i = 0;
 	while (s[*k] != c && s[*k] != '\0')
@@ -72,7 +77,10 @@ static char	*ft_strdup_split(char *arr, char *s, char c, int *k)
 		arr[i++] = s[*k];
 		*k += 1;
 	}
-	arr[i] = '\0';
+	if (i == 0)
+		arr = NULL;
+	else
+		arr[i] = '\0';
 	return (arr);
 }
 
@@ -85,7 +93,7 @@ static int	ft_core(char **arr, int count, char *s, char c)
 	i = 0;
 	while (count > 0)
 	{
-		if (s[k] == c)
+		if (s[k] == c && c != '\0')
 			k++;
 		else
 		{

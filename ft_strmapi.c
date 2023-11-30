@@ -6,7 +6,7 @@
 /*   By: maweiss <maweiss@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 20:30:22 by maweiss           #+#    #+#             */
-/*   Updated: 2023/11/27 11:01:20 by maweiss          ###   ########.fr       */
+/*   Updated: 2023/11/30 13:06:31 by maweiss          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 		ret[i] = (*f)(i, s[i]);
 		i++;
 	}
+	ret[i] = 0;
 	return (ret);
 }
 

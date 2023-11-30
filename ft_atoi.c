@@ -6,7 +6,7 @@
 /*   By: maweiss <maweiss@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/18 12:25:26 by maweiss           #+#    #+#             */
-/*   Updated: 2023/11/28 13:06:41 by maweiss          ###   ########.fr       */
+/*   Updated: 2023/11/30 13:22:52 by maweiss          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,8 @@ int	ft_atoi(const char *nptr)
 		nptr++;
 	}
 	else if (*nptr == '+')
+		nptr++;
+	while (*nptr == '0' && *(nptr + 1) == '0')
 		nptr++;
 	if (*nptr >= '0' && *nptr <= '9')
 		return (ft_core(nptr) * sign);

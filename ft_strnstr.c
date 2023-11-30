@@ -6,7 +6,7 @@
 /*   By: maweiss <maweiss@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 20:21:31 by maweiss           #+#    #+#             */
-/*   Updated: 2023/11/27 11:02:40 by maweiss          ###   ########.fr       */
+/*   Updated: 2023/11/30 13:41:56 by maweiss          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,14 @@
 
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	int			i;
-	int			k;
-	int			l_tmp;
+	size_t		i;
+	size_t		k;
+	size_t		l_tmp;
 
 	if (*little == '\0')
 		return ((char *)big);
+	if (*big == '\0')
+		return (NULL);
 	while (len > 0)
 	{
 		if (*big == *little)
