@@ -6,7 +6,7 @@
 /*   By: maweiss <maweiss@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 17:20:38 by maweiss           #+#    #+#             */
-/*   Updated: 2023/11/27 10:56:22 by maweiss          ###   ########.fr       */
+/*   Updated: 2023/12/01 18:59:52 by maweiss          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,11 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	if (!ovfh(nmemb, size, &res))
 		return (NULL);
 	else
+	{
 		str = malloc(res);
+		if (!str)
+			return (NULL);
+	}
 	while (i <= res)
 	{
 		str[i] = 0;

@@ -6,7 +6,7 @@
 /*   By: maweiss <maweiss@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 17:16:43 by maweiss           #+#    #+#             */
-/*   Updated: 2023/11/27 10:59:44 by maweiss          ###   ########.fr       */
+/*   Updated: 2023/12/01 19:01:16 by maweiss          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,8 @@ char	*ft_strdup(char *src)
 	str = src;
 	len = ft_strlen(str);
 	str = malloc(sizeof (char) * len + 1);
+	if (!str)
+		return (NULL);
 	ret = str;
 	while (*src)
 		*str++ = *src++;
