@@ -6,7 +6,7 @@
 /*   By: maweiss <maweiss@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 14:21:56 by maweiss           #+#    #+#             */
-/*   Updated: 2023/11/30 12:59:00 by maweiss          ###   ########.fr       */
+/*   Updated: 2023/12/05 11:23:40 by maweiss          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,7 +114,10 @@ char	**ft_split(char const *s, char c)
 	size_t	count;
 	char	**arr;
 
-	count = ft_str_len_count((char *)s, c, 1);
+	if (*s == '\0')
+		count = 0;
+	else
+		count = ft_str_len_count((char *)s, c, 1);
 	arr = malloc(sizeof(char *) * (count + 1));
 	if (!arr)
 	{

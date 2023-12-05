@@ -6,7 +6,7 @@
 /*   By: maweiss <maweiss@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 18:31:34 by maweiss           #+#    #+#             */
-/*   Updated: 2023/11/17 21:16:26 by maweiss          ###   ########.fr       */
+/*   Updated: 2023/12/05 11:38:45 by maweiss          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	unsigned long	a;
 
 	a = 0;
+	if (dest == NULL && src == NULL)
+		return (dest);
 	tmp = dest;
 	while (a < n)
 	{

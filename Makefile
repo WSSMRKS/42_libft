@@ -75,4 +75,4 @@ help:
 	@echo "fclean --> Delete everything besides source files"
 	@echo "re --> recompile everything (fclean, all)"
 
-.PHONY: all clean fclean re name help bonus run debug
+.PHONY: all name bonus test run debug clean fclean re help

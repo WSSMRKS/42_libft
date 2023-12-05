@@ -6,7 +6,7 @@
 /*   By: maweiss <maweiss@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 17:43:49 by maweiss           #+#    #+#             */
-/*   Updated: 2023/11/17 20:20:12 by maweiss          ###   ########.fr       */
+/*   Updated: 2023/12/05 12:18:18 by maweiss          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	while (*(char *)s1 == *(char *)s2 && n > 0)
+	while (n > 0 && *(unsigned char *)s1 == *(unsigned char *)s2)
 	{
 		s1++;
 		s2++;
@@ -23,10 +23,29 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	}
 	if (n == 0)
 		return (0);
-	return (*(char *)s1 - *(char *)s2);
+	return (*(unsigned char *)s1 - *(unsigned char *)s2);
 }
 
 /*
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
+{
+	while (n > 0 )
+	{
+		if (*(unsigned char *)s1 == *(unsigned char *)s2)
+		{
+			s1++;
+			s2++;
+			n--;
+		}
+		else
+			return (*(unsigned char *)s1 - *(unsigned char *)s2);
+	}
+	if (n == 0)
+		return (0);
+	return (0);
+}
+
+
 int	main(void)
 {
 	int	bla[] = {112, 12, 122, 11, 12};

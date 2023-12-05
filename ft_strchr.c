@@ -6,7 +6,7 @@
 /*   By: maweiss <maweiss@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 16:08:17 by maweiss           #+#    #+#             */
-/*   Updated: 2023/11/27 17:29:46 by maweiss          ###   ########.fr       */
+/*   Updated: 2023/12/05 12:34:49 by maweiss          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ char	*ft_strchr(const char *s, int c)
 			return ((char *)&s[i]);
 		i++;
 	}
-	if (c == 0)
+	if ((char)c == 0)
 		return ((char *)&s[i]);
 	return (NULL);
 }
