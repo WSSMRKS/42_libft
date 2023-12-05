@@ -139,6 +139,7 @@ int	main(void)
 	static char	c = '^';
 	char		**split;
 	size_t		i;
+	
 
 	i = 0;
 	split = ft_split(test, c);
