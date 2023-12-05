@@ -6,7 +6,7 @@
 /*   By: maweiss <maweiss@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 11:53:04 by maweiss           #+#    #+#             */
-/*   Updated: 2023/11/27 17:09:46 by maweiss          ###   ########.fr       */
+/*   Updated: 2023/12/05 13:41:59 by maweiss          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	int	i;
 
 	if (n == 0)
-		return (NULL);
-	if (src - 1 > dest)
+		return (dest);
+	if (src < dest)
 	{
 		while (n > 0)
 		{

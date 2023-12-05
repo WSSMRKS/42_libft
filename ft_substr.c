@@ -6,7 +6,7 @@
 /*   By: maweiss <maweiss@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 11:03:20 by maweiss           #+#    #+#             */
-/*   Updated: 2023/12/05 11:03:50 by maweiss          ###   ########.fr       */
+/*   Updated: 2023/12/05 13:48:27 by maweiss          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		while (act_l-- > 0 && len-- > 0)
 			sub[i++] = s[start++];
 	}
+	if (!sub)
+		return (NULL);
 	sub[i] = '\0';
 	return (sub);
 }
