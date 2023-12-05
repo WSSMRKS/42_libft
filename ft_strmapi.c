@@ -6,26 +6,14 @@
 /*   By: maweiss <maweiss@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 20:30:22 by maweiss           #+#    #+#             */
-/*   Updated: 2023/11/30 13:06:31 by maweiss          ###   ########.fr       */
+/*   Updated: 2023/12/05 14:30:26 by maweiss          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include <stdio.h>
 #include <ctype.h>
-
-static size_t	ft_strlen(char *str)
-{
-	size_t	a;
-
-	a = 0;
-	while (*str)
-	{
-		a++;
-		str++;
-	}
-	return (a);
-}
+#include "libft.h"
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {

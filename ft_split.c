@@ -6,12 +6,13 @@
 /*   By: maweiss <maweiss@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 14:21:56 by maweiss           #+#    #+#             */
-/*   Updated: 2023/12/05 11:23:40 by maweiss          ###   ########.fr       */
+/*   Updated: 2023/12/05 14:32:05 by maweiss          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include <stdio.h>
+#include "libft.h"
 
 static void	ft_free(char **tofree)
 {
@@ -67,10 +68,8 @@ static char	*ft_strdup_split(char *arr, char *s, char c, int *k)
 	{
 		arr = malloc(sizeof(char) * (len + 1));
 		if (!arr)
-			return (NULL);
+			return (s);
 	}
-	if (len == 0)
-		return (NULL);
 	i = 0;
 	while (s[*k] != c && s[*k] != '\0')
 	{
@@ -98,8 +97,11 @@ static int	ft_core(char **arr, int count, char *s, char c)
 		else
 		{
 			arr[i] = ft_strdup_split(arr[i], (char *)s, c, &k);
-			if (!arr)
-				break ;
+			if (arr[i] == s)
+			{
+				arr[i] = NULL;
+				return (10);
+			}
 			i++;
 			count--;
 		}
@@ -135,8 +137,8 @@ char	**ft_split(char const *s, char c)
 /*
 int	main(void)
 {
-	static char	*test = "...This.is.the first test.of.my.new.split function...";
-	static char	c = '.';
+	static char	*test = "^^^1^^2a,^^^^3^^^^--h^^^^";
+	static char	c = '^';
 	char		**split;
 	size_t		i;
 

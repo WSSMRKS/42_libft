@@ -6,24 +6,12 @@
 /*   By: maweiss <maweiss@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 17:16:43 by maweiss           #+#    #+#             */
-/*   Updated: 2023/12/01 19:01:16 by maweiss          ###   ########.fr       */
+/*   Updated: 2023/12/05 14:31:56 by maweiss          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-
-static int	ft_strlen(char *str)
-{
-	int	strlen;
-
-	strlen = 0;
-	while (*str != '\0')
-	{
-		strlen++;
-		str++;
-	}
-	return (strlen);
-}
+#include "libft.h"
 
 char	*ft_strdup(char *src)
 {

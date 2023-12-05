@@ -6,25 +6,13 @@
 /*   By: maweiss <maweiss@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 14:20:41 by maweiss           #+#    #+#             */
-/*   Updated: 2023/11/27 11:00:45 by maweiss          ###   ########.fr       */
+/*   Updated: 2023/12/05 14:31:33 by maweiss          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 #include <stdio.h>
-
-static size_t	ft_strlen(const char *str)
-{
-	size_t	a;
-
-	a = 0;
-	while (*str)
-	{
-		a++;
-		str++;
-	}
-	return (a);
-}
+#include "libft.h"
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
