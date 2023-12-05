@@ -6,7 +6,7 @@
 /*   By: maweiss <maweiss@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 14:21:56 by maweiss           #+#    #+#             */
-/*   Updated: 2023/12/05 14:42:31 by maweiss          ###   ########.fr       */
+/*   Updated: 2023/12/05 17:34:23 by maweiss          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -135,7 +135,7 @@ char	**ft_split(char const *s, char c)
 /*
 int	main(void)
 {
-	static char	*test = "^^^1^^2a,^^^^3^^^^--h^^^^";
+	static char	*test = "";
 	static char	c = '^';
 	char		**split;
 	size_t		i;

@@ -6,24 +6,11 @@
 /*   By: maweiss <maweiss@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 16:08:17 by maweiss           #+#    #+#             */
-/*   Updated: 2023/12/05 14:43:18 by maweiss          ###   ########.fr       */
+/*   Updated: 2023/12/05 14:45:45 by maweiss          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-static size_t	ft_strlen(char *str)
-{
-	size_t	a;
-
-	a = 0;
-	while (*str)
-	{
-		a++;
-		str++;
-	}
-	return (a);
-}
 
 char	*ft_strrchr(const char *s, int c)
 {
