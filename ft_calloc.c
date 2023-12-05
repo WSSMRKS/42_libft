@@ -6,11 +6,11 @@
 /*   By: maweiss <maweiss@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 17:20:38 by maweiss           #+#    #+#             */
-/*   Updated: 2023/12/01 18:59:52 by maweiss          ###   ########.fr       */
+/*   Updated: 2023/12/05 14:41:26 by maweiss          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 static size_t	*ovfh(size_t nmemb, size_t size, size_t *res)
 {

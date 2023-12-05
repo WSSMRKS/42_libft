@@ -6,12 +6,11 @@
 /*   By: maweiss <maweiss@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 11:17:42 by maweiss           #+#    #+#             */
-/*   Updated: 2023/11/29 12:27:01 by maweiss          ###   ########.fr       */
+/*   Updated: 2023/12/05 14:41:50 by maweiss          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <stdio.h>
+#include "libft.h"
 
 static char	*ft_special(int *nb, int *digits)
 {

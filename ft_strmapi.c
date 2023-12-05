@@ -6,13 +6,10 @@
 /*   By: maweiss <maweiss@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 20:30:22 by maweiss           #+#    #+#             */
-/*   Updated: 2023/12/05 14:30:26 by maweiss          ###   ########.fr       */
+/*   Updated: 2023/12/05 14:43:07 by maweiss          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <stdio.h>
-#include <ctype.h>
 #include "libft.h"
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))

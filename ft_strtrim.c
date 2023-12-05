@@ -6,11 +6,10 @@
 /*   By: maweiss <maweiss@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 13:19:11 by maweiss           #+#    #+#             */
-/*   Updated: 2023/11/29 14:06:43 by maweiss          ###   ########.fr       */
+/*   Updated: 2023/12/05 14:43:21 by maweiss          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
 static int	ft_checkset(char const *s1, char const *set)

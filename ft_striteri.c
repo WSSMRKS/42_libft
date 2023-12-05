@@ -6,13 +6,11 @@
 /*   By: maweiss <maweiss@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 20:30:22 by maweiss           #+#    #+#             */
-/*   Updated: 2023/11/23 18:48:37 by maweiss          ###   ########.fr       */
+/*   Updated: 2023/12/05 14:42:51 by maweiss          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <stdio.h>
-#include <ctype.h>
+#include "libft.h"
 
 void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
@@ -48,9 +46,9 @@ int	main(void)
 	// mapres = ft_strmapi(s4, (char (*)(unsigned int, char))my_toupper);
 	// printf("%s\n\n", s4);
 	// printf("%s\n\n", mapres);
-	
+
 	char s3[] = "string to set to uppercase.1234567890";
-	
+
 	printf("%s\n", s3);
     ft_striteri(s3, (void (*)(unsigned int, char*))my_toupper_i);
     printf("%s\n", s3);

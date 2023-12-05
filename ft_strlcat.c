@@ -6,12 +6,10 @@
 /*   By: maweiss <maweiss@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 14:20:41 by maweiss           #+#    #+#             */
-/*   Updated: 2023/12/05 14:31:42 by maweiss          ###   ########.fr       */
+/*   Updated: 2023/12/05 14:42:57 by maweiss          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include <stdio.h>
 #include "libft.h"
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size)

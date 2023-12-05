@@ -34,8 +34,8 @@ all : $(NAME)
 $(NAME): $(SRC_OBJ)
 	ar rcvs $(NAME) $(SRC_OBJ)
 
-#bonus: $(BONUS_OBJ)
-#	ar rcvs $(NAME) $(BONUS_OBJ)
+bonus: $(BONUS_OBJ)
+	ar rcvs $(NAME) $(BONUS_OBJ)
 
 test: $(MAIN_OBJ) $(NAME) $(TEST_OBJ)
 	$(CC) $(CFLAGS) $(MAIN_OBJ) $(SRC_OBJ) $(TEST_OBJ) -o $(MAIN_NAME)

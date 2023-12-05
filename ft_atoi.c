@@ -6,12 +6,11 @@
 /*   By: maweiss <maweiss@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/18 12:25:26 by maweiss           #+#    #+#             */
-/*   Updated: 2023/11/30 13:22:52 by maweiss          ###   ########.fr       */
+/*   Updated: 2023/12/05 14:41:14 by maweiss          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <stdio.h>
+#include "libft.h"
 
 static int	ft_core(const char *str)
 {

@@ -6,9 +6,11 @@
 /*   By: maweiss <maweiss@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 16:26:16 by maweiss           #+#    #+#             */
-/*   Updated: 2023/11/06 17:09:06 by maweiss          ###   ########.fr       */
+/*   Updated: 2023/12/05 14:41:34 by maweiss          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_isalpha(int c)
 {

@@ -6,12 +6,10 @@
 /*   By: maweiss <maweiss@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 11:03:20 by maweiss           #+#    #+#             */
-/*   Updated: 2023/12/05 13:48:27 by maweiss          ###   ########.fr       */
+/*   Updated: 2023/12/05 14:43:24 by maweiss          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
 #include "libft.h"
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)

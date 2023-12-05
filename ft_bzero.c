@@ -6,11 +6,11 @@
 /*   By: maweiss <maweiss@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 15:53:06 by maweiss           #+#    #+#             */
-/*   Updated: 2023/11/07 16:48:00 by maweiss          ###   ########.fr       */
+/*   Updated: 2023/12/05 14:41:22 by maweiss          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
 void	*ft_bzero(void *s, size_t n)
 {

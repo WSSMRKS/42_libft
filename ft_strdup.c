@@ -6,11 +6,10 @@
 /*   By: maweiss <maweiss@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 17:16:43 by maweiss           #+#    #+#             */
-/*   Updated: 2023/12/05 14:31:56 by maweiss          ###   ########.fr       */
+/*   Updated: 2023/12/05 14:42:40 by maweiss          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
 char	*ft_strdup(char *src)

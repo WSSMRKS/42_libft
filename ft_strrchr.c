@@ -6,11 +6,11 @@
 /*   By: maweiss <maweiss@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 16:08:17 by maweiss           #+#    #+#             */
-/*   Updated: 2023/11/27 17:52:30 by maweiss          ###   ########.fr       */
+/*   Updated: 2023/12/05 14:43:18 by maweiss          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
 static size_t	ft_strlen(char *str)
 {
