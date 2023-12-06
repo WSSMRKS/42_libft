@@ -6,7 +6,7 @@
 /*   By: maweiss <maweiss@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 13:14:07 by maweiss           #+#    #+#             */
-/*   Updated: 2023/12/06 13:22:48 by maweiss          ###   ########.fr       */
+/*   Updated: 2023/12/06 13:41:04 by maweiss          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,4 +62,5 @@ int	main(void)
 		printf("---> ft_lstsize return value != 4 --> Fail!\n");
 	else
 		printf("---> Error!\n");
+	//printf("ft_lstdelone------------------------------------------\n");
 }

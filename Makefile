@@ -65,7 +65,7 @@ clean:
 	@rm -f $(TEST_OBJ)
 	@rm -f $(HEADER_OBJ)
 	@echo "Working folder clean."
-	@echo "\"libft.a\" left"
+	@echo "\"libft.a\" left if was there before"
 
 fclean: clean
 	@rm -f $(NAME) $(MAIN_NAME)
