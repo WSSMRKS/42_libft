@@ -17,7 +17,7 @@ SRC =  	ft_atoi.c		ft_itoa.c		ft_putnbr_fd.c	ft_strlcpy.c	ft_tolower.c	\
 		ft_strdup.c		ft_strnstr.c	ft_isascii.c	ft_memset.c		ft_striteri.c	\
 		ft_strrchr.c	ft_isdigit.c	ft_putchar_fd.c	ft_strjoin.c	ft_strtrim.c	\
 		ft_isprint.c	ft_putendl_fd.c	ft_strlcat.c	ft_substr.c
-BONUS_SRC = ft_lstsize.c 	ft_lstnew.c		ft_lstadd_front.c
+BONUS_SRC = 	ft_lstsize.c 	ft_lstnew.c		ft_lstadd_front.c	ft_lstlast.c	ft_lstadd_back.c
 MAIN_SRC = main_bonus.c
 TEST_SRC = ft_putstr_non_printable.c
 HEADERS = libft.h
@@ -71,7 +71,7 @@ fclean: clean
 	@rm -f $(NAME) $(MAIN_NAME)
 	@echo "\"libft.a\" deleted"
 
-re:	fclean all
+re: fclean all
 
 name:
 	@echo "$(NAME)"
