@@ -6,7 +6,7 @@
 /*   By: maweiss <maweiss@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 17:20:38 by maweiss           #+#    #+#             */
-/*   Updated: 2023/12/05 14:41:26 by maweiss          ###   ########.fr       */
+/*   Updated: 2023/12/07 23:31:27 by maweiss          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,13 +45,21 @@ void	*ft_calloc(size_t nmemb, size_t size)
 }
 
 /*
-#include <unistd.h>
-
 int	main(void)
 {
-	int	*arr;
+	int				*arr;
+	unsigned char	*d;
+	int				i;
 
-	arr = ft_calloc(200, 4);
-	ft_putstr_non_printable((char *)arr, 800);
+	i = 0;
+	arr = ft_calloc(5, 1);
+	d = (unsigned char *)arr;
+	while (i < 20)
+	{
+		printf("%02x\n", *d);
+		d++;
+		i++;
+	}
+	free(arr);
 }
 */
