@@ -1,22 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstlast.c                                       :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maweiss <maweiss@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/06 11:30:50 by maweiss           #+#    #+#             */
-/*   Updated: 2023/12/06 12:57:15 by maweiss          ###   ########.fr       */
+/*   Created: 2023/12/06 11:49:37 by maweiss           #+#    #+#             */
+/*   Updated: 2023/12/06 20:05:34 by maweiss          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstlast(t_list *lst)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	while (lst->next != NULL)
+	t_list	*tmp;
+
+	if (*lst == NULL)
+		*lst = new;
+	else
 	{
-		lst = lst->next;
+		tmp = *lst;
+		while (tmp->next != NULL)
+			tmp = tmp->next;
+		tmp->next = new;
 	}
-	return (lst);
 }

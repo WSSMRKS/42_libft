@@ -17,7 +17,9 @@ SRC =  	ft_atoi.c		ft_itoa.c		ft_putnbr_fd.c	ft_strlcpy.c	ft_tolower.c	\
 		ft_strdup.c		ft_strnstr.c	ft_isascii.c	ft_memset.c		ft_striteri.c	\
 		ft_strrchr.c	ft_isdigit.c	ft_putchar_fd.c	ft_strjoin.c	ft_strtrim.c	\
 		ft_isprint.c	ft_putendl_fd.c	ft_strlcat.c	ft_substr.c
-BONUS_SRC = 	ft_lstsize.c 	ft_lstnew.c		ft_lstadd_front.c	ft_lstlast.c	ft_lstadd_back.c
+BONUS_SRC = 	ft_lstadd_back_bonus.c	ft_lstadd_front_bonus.c		ft_lstclear_bonus.c	\
+				ft_lstdelone_bonus.c	ft_lstister_bonus.c			ft_lstlast_bonus.c	\
+				ft_lstmap_bonus.c		ft_lstnew_bonus.c			ft_lstsize_bonus.c
 MAIN_SRC = main_bonus.c
 TEST_SRC = ft_putstr_non_printable.c
 HEADERS = libft.h
@@ -27,35 +29,29 @@ SRC_OBJ = $(SRC:.c=.o)
 BONUS_OBJ = $(BONUS_SRC:.c=.o)
 MAIN_OBJ = $(MAIN_SRC:.c=.o)
 TEST_OBJ = $(TEST_SRC:.c=.o)
-HEADER_OBJ = $(HEADERS:.h=.h.gch)
 
 # Targets #
 all : $(NAME)
-	@echo "\"libft.a\" sucessfully created!"
 
-$(NAME): $(SRC_OBJ) $(HEADER_OBJ)
-	@ar rcs $(NAME) $(SRC_OBJ)
+$(NAME): $(SRC_OBJ)
+	ar rcs $(NAME) $(SRC_OBJ)
 
 bonus: $(BONUS_OBJ) $(SRC_OBJ)
-	@ar rcs $(NAME) $(SRC_OBJ) $(BONUS_OBJ)
-	@echo "\"libft.a\" including bonus sucessfully created!"
+	ar rcs $(NAME) $(SRC_OBJ) $(BONUS_OBJ)
 
-test: $(MAIN_OBJ) $(NAME) $(TEST_OBJ) $(BONUS_OBJ)
-	@$(CC) $(CFLAGS) $(MAIN_OBJ) $(SRC_OBJ) $(TEST_OBJ) $(BONUS_OBJ) -o $(MAIN_NAME)
-	@echo "test command sucessfully executed. Executable is called \"$(MAIN_NAME)\"!"
+# test: $(MAIN_OBJ) $(NAME) $(TEST_OBJ) $(BONUS_OBJ)
+# 	@$(CC) $(CFLAGS) $(MAIN_OBJ) $(SRC_OBJ) $(TEST_OBJ) $(BONUS_OBJ) -o $(MAIN_NAME)
+# 	@echo "test command sucessfully executed. Executable is called \"$(MAIN_NAME)\"!"
 
-run: fclean test bonus
-	@echo "\"a.out\" execution below!"
-	@./a.out | cat -e
+# run: fclean test bonus
+# 	@echo "\"a.out\" execution below!"
+# 	@./a.out | cat -e
 
-debug: fclean test bonus
-	gdb ./a.out
+# debug: fclean test bonus
+# 	gdb ./a.out
 
 # Compile .c to .o #
 %.o: %.c
-	@$(CC) $(CFLAGS) $(COPTIONS) $^ -o $@
-# Compile .h to .h.gch #
-%.h.gch: %.h
 	@$(CC) $(CFLAGS) $(COPTIONS) $^ -o $@
 
 clean:
@@ -63,9 +59,8 @@ clean:
 	@rm -f $(MAIN_OBJ)
 	@rm -f $(BONUS_OBJ)
 	@rm -f $(TEST_OBJ)
-	@rm -f $(HEADER_OBJ)
 	@echo "Working folder clean."
-	@echo "\"libft.a\" left if was there before"
+	@echo "\"libft.a\" left if it was there before"
 
 fclean: clean
 	@rm -f $(NAME) $(MAIN_NAME)
@@ -81,9 +76,9 @@ help:
 	@echo "all --> Compile whole project"
 	@echo "name --> Display project name"
 	@echo "bonus --> Compile bonus if available project"
-	@echo "test --> Compile main if available"
-	@echo "run --> Run main if available"
-	@echo "debug --> Run GDB with a.out"
+#	@echo "test --> Compile main if available"
+#	@echo "run --> Run main if available"
+#	@echo "debug --> Run GDB with a.out"
 	@echo "clean --> Delete all object files"
 	@echo "fclean --> Delete everything besides source files"
 	@echo "re --> recompile everything (fclean, all)"
