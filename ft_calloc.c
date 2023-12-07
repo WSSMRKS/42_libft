@@ -36,7 +36,7 @@ void	*ft_calloc(size_t nmemb, size_t size)
 		if (!str)
 			return (NULL);
 	}
-	while (i <= res)
+	while (i < res)
 	{
 		str[i] = 0;
 		i++;
