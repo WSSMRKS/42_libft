@@ -17,10 +17,10 @@ SRC =  	ft_atoi.c		ft_itoa.c		ft_putnbr_fd.c	ft_strlcpy.c	ft_tolower.c	\
 		ft_strdup.c		ft_strnstr.c	ft_isascii.c	ft_memset.c		ft_striteri.c	\
 		ft_strrchr.c	ft_isdigit.c	ft_putchar_fd.c	ft_strjoin.c	ft_strtrim.c	\
 		ft_isprint.c	ft_putendl_fd.c	ft_strlcat.c	ft_substr.c
-BONUS_SRC = 	ft_lstadd_back_bonus.c	ft_lstadd_front_bonus.c		ft_lstclear_bonus.c	\
-				ft_lstdelone_bonus.c	ft_lstiter_bonus.c			ft_lstlast_bonus.c	\
-				ft_lstmap_bonus.c		ft_lstnew_bonus.c			ft_lstsize_bonus.c
-MAIN_SRC = main_bonus.c
+BONUS_SRC = 	ft_lstadd_back.c	ft_lstadd_front.c		ft_lstclear.c	\
+				ft_lstdelone.c	ft_lstister.c			ft_lstlast.c	\
+				ft_lstmap.c		ft_lstnew.c			ft_lstsize.c
+MAIN_SRC = main.c
 TEST_SRC = ft_putstr_non_printable.c
 HEADERS = libft.h
 
@@ -33,11 +33,12 @@ TEST_OBJ = $(TEST_SRC:.c=.o)
 # Targets #
 all : $(NAME)
 
-$(NAME): $(SRC_OBJ)
-	ar rcs $(NAME) $(SRC_OBJ)
 
-bonus: $(BONUS_OBJ) $(SRC_OBJ)
+$(NAME): $(BONUS_OBJ) $(SRC_OBJ)
 	ar rcs $(NAME) $(SRC_OBJ) $(BONUS_OBJ)
+
+base: $(SRC_OBJ)
+	ar rcs $(NAME) $(SRC_OBJ)
 
 # test: $(MAIN_OBJ) $(NAME) $(TEST_OBJ) $(BONUS_OBJ)
 # 	@$(CC) $(CFLAGS) $(MAIN_OBJ) $(SRC_OBJ) $(TEST_OBJ) $(BONUS_OBJ) -o $(MAIN_NAME)
@@ -75,7 +76,7 @@ help:
 	@echo "Possible Commands:"
 	@echo "all --> Compile whole project"
 	@echo "name --> Display project name"
-	@echo "bonus --> Compile bonus if available project"
+	@echo "base --> Compile only core functions without bonus"
 #	@echo "test --> Compile main if available"
 #	@echo "run --> Run main if available"
 #	@echo "debug --> Run GDB with a.out"
