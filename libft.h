@@ -6,7 +6,7 @@
 /*   By: maweiss <maweiss@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 11:06:46 by maweiss           #+#    #+#             */
-/*   Updated: 2024/02/27 15:08:49 by maweiss          ###   ########.fr       */
+/*   Updated: 2024/02/28 11:10:12 by maweiss          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ typedef struct s_list
 
 int		ft_atoi(const char *nptr);
 long	ft_atol(const char *nptr);
+int		ft_countwords(char const *str, char c);
 void	*ft_bzero(void *s, size_t n);
 void	*ft_calloc(size_t nmemb, size_t size);
 int		ft_isalnum(int c);

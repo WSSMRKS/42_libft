@@ -10,7 +10,8 @@ CFLAGS = -g -Werror -Wall -Wextra
 COPTIONS = -c
 CC = cc
 # Source Files #
-SRC =  	ft_atoi.c			ft_atol.c		ft_itoa.c		ft_putnbr_fd.c	ft_strlcpy.c	ft_tolower.c	\
+SRC =  	ft_atoi.c		ft_atol.c		ft_itoa.c		ft_putnbr_fd.c	ft_strlcpy.c	\
+		ft_tolower.c	ft_countwords.c 												\
 		ft_bzero.c		ft_memchr.c		ft_putstr_fd.c  ft_strlen.c		ft_toupper.c	\
 		ft_calloc.c		ft_memcmp.c 	ft_split.c		ft_strmapi.c	ft_isalnum.c	\
 		ft_memcpy.c		ft_strchr.c		ft_strncmp.c	ft_isalpha.c	ft_memmove.c	\
