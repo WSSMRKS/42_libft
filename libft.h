@@ -6,7 +6,7 @@
 /*   By: maweiss <maweiss@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 11:06:46 by maweiss           #+#    #+#             */
-/*   Updated: 2024/02/28 11:10:12 by maweiss          ###   ########.fr       */
+/*   Updated: 2024/03/06 11:56:40 by maweiss          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,7 @@
 # define LIBFT_H
 # include <stddef.h>
 # include <stdlib.h>
-# include <stdio.h>
-# include <string.h>
+# include <stdarg.h>
 # include <unistd.h>
 # include <ctype.h>
 
@@ -70,5 +69,10 @@ void	ft_lstdelone(t_list *lst, void (*del)(void *));
 void	ft_lstclear(t_list **lst, void (*del)(void *));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+int		ft_printf(const char *s, ...);
+int		ft_pnb_b_fd(long nbr, char *base, int fd, int negp);
+int		ft_pnb_b_fd_s(int nbr, char *base, int fd, int negp);
+int		ft_putstr_fd_ret(char *s, int fd);
+int		ft_putchar_fd_ret(char c, int fd);
 
 #endif

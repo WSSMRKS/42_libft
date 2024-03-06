@@ -10,14 +10,15 @@ CFLAGS = -g -Werror -Wall -Wextra
 COPTIONS = -c
 CC = cc
 # Source Files #
-SRC =  	ft_atoi.c		ft_atol.c		ft_itoa.c		ft_putnbr_fd.c	ft_strlcpy.c	\
-		ft_tolower.c	ft_countwords.c 												\
+SRC =  	ft_atoi.c		ft_itoa.c		ft_putnbr_fd.c	ft_strlcpy.c	ft_tolower.c	\
 		ft_bzero.c		ft_memchr.c		ft_putstr_fd.c  ft_strlen.c		ft_toupper.c	\
 		ft_calloc.c		ft_memcmp.c 	ft_split.c		ft_strmapi.c	ft_isalnum.c	\
 		ft_memcpy.c		ft_strchr.c		ft_strncmp.c	ft_isalpha.c	ft_memmove.c	\
 		ft_strdup.c		ft_strnstr.c	ft_isascii.c	ft_memset.c		ft_striteri.c	\
 		ft_strrchr.c	ft_isdigit.c	ft_putchar_fd.c	ft_strjoin.c	ft_strtrim.c	\
 		ft_isprint.c	ft_putendl_fd.c	ft_strlcat.c	ft_substr.c
+ADDON = ft_printf.c		ft_pnb_b_fd.c	ft_pnb_b_fd_s.c	helper_functions.c				\
+		ft_countwords.c ft_atol.c
 BONUS_SRC = 	ft_lstadd_back.c	ft_lstadd_front.c		ft_lstclear.c	\
 				ft_lstdelone.c	ft_lstister.c			ft_lstlast.c	\
 				ft_lstmap.c		ft_lstnew.c			ft_lstsize.c
@@ -27,6 +28,7 @@ HEADERS = libft.h
 
 # Object Files #
 SRC_OBJ = $(SRC:.c=.o)
+ADDON_OBJ = $(ADDON:.c=.o)
 BONUS_OBJ = $(BONUS_SRC:.c=.o)
 MAIN_OBJ = $(MAIN_SRC:.c=.o)
 TEST_OBJ = $(TEST_SRC:.c=.o)
@@ -35,8 +37,8 @@ TEST_OBJ = $(TEST_SRC:.c=.o)
 all : $(NAME)
 
 
-$(NAME): $(BONUS_OBJ) $(SRC_OBJ)
-	ar rcs $(NAME) $(SRC_OBJ) $(BONUS_OBJ)
+$(NAME): $(BONUS_OBJ) $(SRC_OBJ) $(ADDON_OBJ)
+	ar rcs $(NAME) $(SRC_OBJ) $(BONUS_OBJ) $(ADDON_OBJ)
 
 base: $(SRC_OBJ)
 	ar rcs $(NAME) $(SRC_OBJ)
@@ -61,6 +63,7 @@ clean:
 	@rm -f $(MAIN_OBJ)
 	@rm -f $(BONUS_OBJ)
 	@rm -f $(TEST_OBJ)
+	@rm -f $(ADDON_OBJ)
 	@echo "Working folder clean."
 	@echo "\"libft.a\" left if it was there before"
 
@@ -81,7 +84,7 @@ help:
 #	@echo "test --> Compile main if available"
 #	@echo "run --> Run main if available"
 #	@echo "debug --> Run GDB with a.out"
-	@echo "clean --> Delete all object files"
+	@echo "clean --> Delete all object files, leave executable"
 	@echo "fclean --> Delete everything besides source files"
 	@echo "re --> recompile everything (fclean, all)"
 
