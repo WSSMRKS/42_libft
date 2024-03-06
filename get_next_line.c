@@ -6,7 +6,7 @@
 /*   By: maweiss <maweiss@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 14:35:10 by maweiss           #+#    #+#             */
-/*   Updated: 2024/03/06 15:10:02 by maweiss          ###   ########.fr       */
+/*   Updated: 2024/03/06 15:26:41 by maweiss          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ static char	*ft_ret_val(char *full_buff, int *nbr_nl)
 		return (ft_substr(full_buff, 0, ft_strlen(full_buff)));
 }
 
-char	*ft_read(char *full_buff, int fd, int *res_read)
+static char	*ft_read(char *full_buff, int fd, int *res_read)
 {
 	char	*to_free;
 	char	*buffer;
@@ -78,7 +78,7 @@ static char	*ft_read_if_no_nl(char *full_buff, int fd)
 		return (full_buff);
 }
 
-char	*get_next_line(int fd)
+char	*ft_get_next_line(int fd)
 {
 	static char	*stbuff[MAX_FD + 1];
 	int			nbr_nl;
