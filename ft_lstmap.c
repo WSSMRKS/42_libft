@@ -6,7 +6,7 @@
 /*   By: maweiss <maweiss@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 11:38:52 by maweiss           #+#    #+#             */
-/*   Updated: 2023/12/07 11:38:54 by maweiss          ###   ########.fr       */
+/*   Updated: 2024/03/15 12:29:05 by maweiss          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,13 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	flst = NULL;
 	while (lst)
 	{
-		nlst = ft_lstnew((lst->content));
+		nlst = ft_lstnew((lst->cont));
 		if (nlst == NULL)
 		{
 			ft_lstclear(&flst, (*del));
 			return (NULL);
 		}
-		nlst->content = (*f)(nlst->content);
+		nlst->cont = (*f)(nlst->cont);
 		ft_lstadd_back(&flst, nlst);
 		lst = lst->next;
 	}

@@ -6,7 +6,7 @@
 /*   By: maweiss <maweiss@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 13:29:17 by maweiss           #+#    #+#             */
-/*   Updated: 2023/12/07 11:35:42 by maweiss          ###   ########.fr       */
+/*   Updated: 2024/03/15 12:27:21 by maweiss          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@ void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
 	if (lst)
 	{
-		if (del && lst->content)
-			(del)(lst->content);
+		if (del && lst->cont)
+			(del)(lst->cont);
 		free(lst);
 		lst = NULL;
 	}
