@@ -6,7 +6,7 @@
 /*   By: maweiss <maweiss@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 11:06:46 by maweiss           #+#    #+#             */
-/*   Updated: 2024/04/07 12:58:36 by maweiss          ###   ########.fr       */
+/*   Updated: 2024/04/07 21:06:43 by maweiss          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,5 +85,6 @@ int		ft_putstr_fd_ret(char *s, int fd);
 int		ft_putchar_fd_ret(char c, int fd);
 char	*ft_get_next_line(int fd);
 void	ft_putstr_non_printable(char *str, size_t n);
+int		ft_abs(int a);
 
 #endif
