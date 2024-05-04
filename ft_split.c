@@ -6,7 +6,7 @@
 /*   By: maweiss <maweiss@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 14:21:56 by maweiss           #+#    #+#             */
-/*   Updated: 2023/12/05 17:34:23 by maweiss          ###   ########.fr       */
+/*   Updated: 2024/05/04 19:17:24 by maweiss          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ static char	*ft_strdup_split(char *arr, char *s, char c, int *k)
 	len = ft_str_len_count(&s[*k], c, 2);
 	if (len > 0)
 	{
-		arr = malloc(sizeof(char) * (len + 1));
+		arr = ft_calloc(sizeof(char), len + 1);
 		if (!arr)
 			return (s);
 	}
@@ -118,7 +118,7 @@ char	**ft_split(char const *s, char c)
 		count = 0;
 	else
 		count = ft_str_len_count((char *)s, c, 1);
-	arr = malloc(sizeof(char *) * (count + 1));
+	arr = ft_calloc(sizeof(char *), count + 1);
 	if (!arr)
 	{
 		free((void *) arr);
@@ -139,7 +139,7 @@ int	main(void)
 	static char	c = '^';
 	char		**split;
 	size_t		i;
-	
+
 
 	i = 0;
 	split = ft_split(test, c);
