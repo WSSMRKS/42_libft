@@ -6,7 +6,7 @@
 /*   By: maweiss <maweiss@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/29 10:37:19 by maweiss           #+#    #+#             */
-/*   Updated: 2024/05/29 10:59:23 by maweiss          ###   ########.fr       */
+/*   Updated: 2024/06/03 11:54:45 by maweiss          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 int	ft_free_3d(char ***tofree)
 {
 	int	i;
-	int j;
-	
+	int	j;
+
 	i = 0;
 	if (tofree == NULL)
 		return (1);
