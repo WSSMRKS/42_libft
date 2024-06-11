@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maweiss <maweiss@student.42berlin.de>      +#+  +:+       +#+        */
+/*   By: maweiss <maweiss@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 14:21:56 by maweiss           #+#    #+#             */
-/*   Updated: 2024/05/04 19:17:24 by maweiss          ###   ########.fr       */
+/*   Updated: 2024/06/11 19:51:48 by maweiss          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -132,23 +132,28 @@ char	**ft_split(char const *s, char c)
 	return (arr);
 }
 
-/*
-int	main(void)
-{
-	static char	*test = "";
-	static char	c = '^';
-	char		**split;
-	size_t		i;
+// #include <stdio.h>
+
+// int	main(void)
+// {
+// 	static char	*test = "";
+// 	static char	c = '^';
+// 	char		**split;
+// 	size_t		i;
 
 
-	i = 0;
-	split = ft_split(test, c);
-	while (split[i] != NULL)
-	{
-		printf("%s\n", split[i]);
-		i++;
-	}
-	ft_free(split);
-	return (0);
-}
-*/
+// 	i = 0;
+// 	split = ft_split(test, c);
+// 	if (split == NULL)
+// 		printf("error");
+// 	if (split && split[0] == NULL)
+// 		printf("error2");
+// 	while (split[i] != NULL)
+// 	{
+// 		printf("%s\n", split[i]);
+// 		i++;
+// 	}
+// 	ft_free(split);
+// 	return (0);
+// }
+
