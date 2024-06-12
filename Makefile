@@ -19,7 +19,7 @@ SRC =  	ft_atoi.c		ft_itoa.c		ft_putnbr_fd.c	ft_strlcpy.c	ft_tolower.c	\
 		ft_isprint.c	ft_putendl_fd.c	ft_strlcat.c	ft_substr.c
 ADDON = ft_printf.c		ft_printf_err.c	ft_pnb_b_fd.c	ft_pnb_b_fd_s.c	helper_functions.c	\
 		ft_putstr_non_printable.c	ft_countwords.c 	ft_atol.c 	get_next_line.c	ft_abs.c \
-		ft_free_2d.c	ft_free_3d.c
+		ft_free_2d.c	ft_free_3d.c	ft_fprintf.c
 BONUS_SRC = 	ft_lstadd_back.c	ft_lstadd_front.c		ft_lstclear.c	\
 				ft_lstdelone.c	ft_lstister.c			ft_lstlast.c	\
 				ft_lstmap.c		ft_lstnew.c			ft_lstsize.c

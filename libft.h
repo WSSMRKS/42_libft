@@ -6,7 +6,7 @@
 /*   By: maweiss <maweiss@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 11:06:46 by maweiss           #+#    #+#             */
-/*   Updated: 2024/05/29 10:56:07 by maweiss          ###   ########.fr       */
+/*   Updated: 2024/06/12 11:58:18 by maweiss          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,6 +80,7 @@ void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 int		ft_printf(const char *s, ...);
 int		ft_printf_err(const char *s, ...);
+int		ft_fprintf(int fd, const char *s, ...);
 int		ft_pnb_b_fd(long nbr, char *base, int fd, int negp);
 int		ft_pnb_b_fd_s(int nbr, char *base, int fd, int negp);
 int		ft_putstr_fd_ret(char *s, int fd);
