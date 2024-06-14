@@ -6,13 +6,13 @@
 /*   By: maweiss <maweiss@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 17:20:38 by maweiss           #+#    #+#             */
-/*   Updated: 2023/12/07 23:31:27 by maweiss          ###   ########.fr       */
+/*   Updated: 2024/06/14 16:35:16 by maweiss          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static size_t	*ovfh(size_t nmemb, size_t size, size_t *res)
+static size_t	*ft_ovfh(size_t nmemb, size_t size, size_t *res)
 {
 	*res = nmemb * size;
 	if (nmemb != 0 && *res / nmemb != size)
@@ -28,7 +28,7 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	size_t	res;
 
 	i = 0;
-	if (!ovfh(nmemb, size, &res))
+	if (!ft_ovfh(nmemb, size, &res))
 		return (NULL);
 	else
 	{
