@@ -1,7 +1,3 @@
-# Directories #
-SRCDIR =
-HDRDIR =
-OBJDIR =
 # Names #
 NAME = libft.a
 MAIN_NAME = a.out
@@ -25,6 +21,7 @@ BONUS_SRC = 	ft_lstadd_back.c	ft_lstadd_front.c		ft_lstclear.c	\
 				ft_lstmap.c		ft_lstnew.c			ft_lstsize.c
 MAIN_SRC = main.c
 TEST_SRC = ft_putstr_non_printable.c
+
 HEADERS = libft.h
 
 # Object Files #
@@ -36,7 +33,7 @@ TEST_OBJ = $(TEST_SRC:.c=.o)
 
 # Targets #
 all : $(NAME)
-
+bonus : all
 
 $(NAME): $(BONUS_OBJ) $(SRC_OBJ) $(ADDON_OBJ)
 	ar rcs $(NAME) $(SRC_OBJ) $(BONUS_OBJ) $(ADDON_OBJ)
@@ -60,17 +57,12 @@ base: $(SRC_OBJ)
 	@$(CC) $(CFLAGS) $(COPTIONS) $^ -o $@
 
 clean:
-	@rm -f $(SRC_OBJ)
-	@rm -f $(MAIN_OBJ)
-	@rm -f $(BONUS_OBJ)
-	@rm -f $(TEST_OBJ)
-	@rm -f $(ADDON_OBJ)
+	@rm -f $(SRC_OBJ) $(MAIN_OBJ) $(BONUS_OBJ) $(TEST_OBJ) $(ADDON_OBJ)
 	@echo "Working folder clean."
-	@echo "\"libft.a\" left if it was there before"
 
 fclean: clean
 	@rm -f $(NAME) $(MAIN_NAME)
-	@echo "\"libft.a\" deleted"
+	@echo "\"$(NAME)\" deleted"
 
 re: fclean all
 
@@ -89,4 +81,4 @@ help:
 	@echo "fclean --> Delete everything besides source files"
 	@echo "re --> recompile everything (fclean, all)"
 
-.PHONY: all name test run bonus debug fclean clean re help
+.PHONY: all name test run bonus debug fclean clean re help base
