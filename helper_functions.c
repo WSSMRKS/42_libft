@@ -6,7 +6,7 @@
 /*   By: maweiss <maweiss@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 19:43:43 by maweiss           #+#    #+#             */
-/*   Updated: 2024/03/06 11:51:15 by maweiss          ###   ########.fr       */
+/*   Updated: 2024/08/28 13:53:30 by maweiss          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,7 @@ int	ft_putstr_fd_ret(char *s, int fd)
 		len++;
 		i++;
 	}
-	write(fd, s, len);
-	return (len);
+	return ((int) write(fd, s, len));
 }
 
 int	ft_putchar_fd_ret(char c, int fd)
