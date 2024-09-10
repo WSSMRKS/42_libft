@@ -64,7 +64,8 @@ fclean: clean
 	@rm -f $(NAME) $(MAIN_NAME)
 	@echo "\"$(NAME)\" deleted"
 
-re: fclean all
+re: fclean 
+	all
 
 name:
 	@echo "$(NAME)"
