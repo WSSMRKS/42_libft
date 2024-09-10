@@ -65,7 +65,7 @@ fclean: clean
 	@echo "\"$(NAME)\" deleted"
 
 re: fclean 
-	all
+	$(MAKE) all
 
 name:
 	@echo "$(NAME)"
