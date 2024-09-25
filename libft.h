@@ -6,7 +6,7 @@
 /*   By: maweiss <maweiss@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 11:06:46 by maweiss           #+#    #+#             */
-/*   Updated: 2024/06/14 17:30:34 by maweiss          ###   ########.fr       */
+/*   Updated: 2024/09/25 10:50:37 by maweiss          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,5 +90,6 @@ void	ft_putstr_non_printable(char *str, size_t n);
 int		ft_abs(int a);
 int		ft_free_2d(char **tofree);
 int		ft_free_3d(char ***tofree);
+char	*ft_multistrjoin(int nb_strings, char const *s1, ...);
 
 #endif
